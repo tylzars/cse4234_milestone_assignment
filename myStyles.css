@@ -1,0 +1,98 @@
+html {
+    background-color: antiquewhite;
+    /* overflow-y: hidden; Stop y scrollbar */
+}
+
+body {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 8px;
+    background-color: aliceblue;
+}
+
+header {
+    text-align: center;
+    background-color: blueviolet;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: palevioletred;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    position: relative; /* related to its own position without changing layout */
+    justify-content: center;
+    list-style-type: none;
+    background-color: blue;
+}
+
+.navbar > li { /* Navbar is parent and li is child */
+    background-color: aquamarine;
+    font-weight: bold;
+    font-size: 180%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border-width: 2px;
+}
+
+.navbar > li > a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar > li > a:hover {
+    color: red;
+}
+
+.navbar > li > a:active {
+    color: blue;
+}
+
+.navbar > li > a:visited {
+    color: rgb(28, 218, 63);
+}
+
+.user_navbar {
+    display: flex;
+    position: relative; /* related to its own position without changing layout */
+    justify-content: right;
+    list-style-type: none;
+    background-color: blueviolet;
+}
+
+.user_navbar > li { /* Navbar is parent and li is child */
+    background-color: rgb(115, 33, 191);
+    font-weight: bold;
+    font-size: 180%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border-width: 2px;
+}
+
+.createNewListItem {
+    position: absolute;
+}
+
+label { 
+    color: black;
+    display: inline-block;
+}
+
+label:first-letter {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.createNewListItem > input[type=text] {
+    width: 150px;
+}
