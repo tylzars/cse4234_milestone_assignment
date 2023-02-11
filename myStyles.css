@@ -1,3 +1,7 @@
+/*
+Colors: #EFD9CE, #DEC0F1, #B79CED, #957FEF, #7161EF
+*/
+
 html {
     background-color: antiquewhite;
     /* overflow-y: hidden; Stop y scrollbar */
@@ -7,12 +11,12 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 8px;
-    background-color: aliceblue;
+    background-color: #EFD9CE;
 }
 
 header {
     text-align: center;
-    background-color: blueviolet;
+    background-color: #DEC0F1;
 }
 
 footer {
@@ -20,7 +24,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: palevioletred;
+    background-color: #7161EF;
     color: white;
     text-align: center;
 }
@@ -30,11 +34,11 @@ footer {
     position: relative; /* related to its own position without changing layout */
     justify-content: center;
     list-style-type: none;
-    background-color: blue;
+    background-color: #957FEF;
 }
 
 .navbar > li { /* Navbar is parent and li is child */
-    background-color: aquamarine;
+    background-color: #B79CED;
     font-weight: bold;
     font-size: 180%;
     padding: 10px;
@@ -58,7 +62,7 @@ footer {
 }
 
 .navbar > li > a:visited {
-    color: rgb(28, 218, 63);
+    color: #7161EF;
 }
 
 .user_navbar {
@@ -95,4 +99,16 @@ label:first-letter {
 
 .createNewListItem > input[type=text] {
     width: 150px;
+}
+
+.list_element {
+    text-align: left;
+}
+
+.list_element > p {
+    display: inline;
+}
+
+.list_element > button {
+    display: inline;
 }
