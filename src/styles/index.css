@@ -3,112 +3,141 @@ Colors: #EFD9CE, #DEC0F1, #B79CED, #957FEF, #7161EF
 */
 
 html {
-    background-color: antiquewhite;
-    /* overflow-y: hidden; Stop y scrollbar */
+  background-color: antiquewhite;
+  /* overflow-y: hidden; Stop y scrollbar */
 }
 
 body {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 8px;
-    background-color: #EFD9CE;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 8px;
+  background-color: #efd9ce;
 }
 
 header {
-    text-align: center;
-    background-color: #DEC0F1;
+  text-align: center;
+  background-color: #dec0f1;
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #7161EF;
-    color: white;
-    text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #7161ef;
+  color: white;
+  text-align: center;
 }
 
 .navbar {
-    display: flex;
-    position: relative; /* related to its own position without changing layout */
-    justify-content: center;
-    list-style-type: none;
-    background-color: #957FEF;
+  display: flex;
+  position: relative; /* related to its own position without changing layout */
+  justify-content: center;
+  list-style-type: none;
+  background-color: #957fef;
 }
 
-.navbar > li { /* Navbar is parent and li is child */
-    background-color: #B79CED;
-    font-weight: bold;
-    font-size: 180%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
-    border-width: 2px;
+.navbar > li {
+  /* Navbar is parent and li is child */
+  background-color: #b79ced;
+  font-weight: bold;
+  font-size: 180%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border-width: 2px;
 }
 
 .navbar > li > a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 .navbar > li > a:hover {
-    color: red;
+  color: red;
 }
 
 .navbar > li > a:active {
-    color: blue;
+  color: blue;
 }
 
 .navbar > li > a:visited {
-    color: #7161EF;
+  color: #7161ef;
 }
 
 .user_navbar {
-    display: flex;
-    position: relative; /* related to its own position without changing layout */
-    justify-content: right;
-    list-style-type: none;
-    background-color: blueviolet;
+  display: flex;
+  position: relative; /* related to its own position without changing layout */
+  justify-content: right;
+  list-style-type: none;
+  background-color: blueviolet;
 }
 
-.user_navbar > li { /* Navbar is parent and li is child */
-    background-color: rgb(115, 33, 191);
-    font-weight: bold;
-    font-size: 180%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
-    border-width: 2px;
+.user_navbar > li {
+  /* Navbar is parent and li is child */
+  background-color: rgb(115, 33, 191);
+  font-weight: bold;
+  font-size: 180%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border-width: 2px;
+}
+
+.user_navbar > li > a {
+  color: white;
 }
 
 .createNewListItem {
-    position: absolute;
+  position: absolute;
 }
 
-label { 
-    color: black;
-    display: inline-block;
+label {
+  color: black;
+  display: inline-block;
 }
 
 label:first-letter {
-    font-size: 120%;
-    font-weight: bold;
+  font-size: 120%;
+  font-weight: bold;
 }
 
-.createNewListItem > input[type=text] {
-    width: 150px;
+.createNewListItem > input[type="text"] {
+  width: 150px;
 }
 
 .list_element {
-    text-align: left;
+  text-align: left;
 }
 
 .list_element > p {
-    display: inline;
+  display: inline;
 }
 
 .list_element > button {
-    display: inline;
+  display: inline;
+}
+
+.left-column {
+    float: left;
+    width: 50%;
+}
+
+.right-column {
+  float: right;
+  width: 50%;
+}
+
+.columns {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 10px;
+    text-align-last: center;
+    width: 100%;
 }
