@@ -11,6 +11,7 @@ import Root from "./routes/root";
 import CreateNew from "./routes/createNew";
 import Detail from "./routes/detail";
 import List from "./routes/list";
+import Login from "./routes/login"
 import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
   {
     path: "list",
     element: <List />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "login",
+    element: <Login />,
     errorElement: <ErrorPage />,
   },
 ]);

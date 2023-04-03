@@ -11,10 +11,7 @@ function header() {
             </div>
             <ul className="user_navbar">
                 <li>
-                    <a href="/list">Login</a>
-                </li>
-                <li>
-                    <a href="/list">Signup</a>
+                    <a href="/login">Login/SignUp</a>
                 </li>
                 <li>
                     <a href="Welcome(User)">Welcome (User)</a>
