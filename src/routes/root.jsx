@@ -1,3 +1,8 @@
+import NavBar from './components/navbar'
+import Header from './components/header'
+
+
+
 //import React, { useRef, useEffect, useState } from 'react';
 
 export default function Root() {
@@ -7,43 +12,11 @@ export default function Root() {
         <title>Turtle Teams' Todos'</title>
         <link rel="stylesheet" href="myStyles.css" type="text/css" />
         {/* Store Start */}
-        <header role="banner">
-            <div>
-            <h1>
-                <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }}/>
-                {" "}Welcome to Turtle Teams' Todos' List!{" "}
-                <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }}/>
-            </h1>
-            <p>This page should be tried in safari, chrome or Mozila.</p>
-            </div>
-            <ul className="user_navbar">
-                <li>
-                    <a href="list.html">Login</a>
-                </li>
-                <li>
-                    <a href="list.html">Signup</a>
-                </li>
-                <li>
-                    <a href="Welcome(User)">Welcome (User)</a>
-                </li>
-            </ul>
-        </header>
-        <nav>
-            <ul className="navbar">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/list">List</a>
-                </li>
-                <li>
-                    <a href="/detail">Details</a>
-                </li>
-                <li>
-                    <a href="/createNew">Create New</a>
-                </li>
-            </ul>
-        </nav>
+        <Header />
+
+        {/* React Component for NavBar */}
+        <NavBar />
+
         <article>
             <section>
             <h1>Welcome to index.html!</h1>

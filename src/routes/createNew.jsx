@@ -1,3 +1,7 @@
+import NavBar from './components/navbar'
+import Header from './components/header'
+
+
 function createNew() {
     return (
         <>
@@ -5,42 +9,11 @@ function createNew() {
         <title>Turtle Teams' To-do's</title>
         <link rel="stylesheet" href="myStyles.css" type="text/css" />
         {/* Store Start */}
-        <header role="banner">
-            <div>
-            <h1>
-                <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }}/>
-                {" "}Welcome to Turtle Teams' Todos' List!{" "}
-                <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }}/>
-            </h1>
-            </div>
-            <ul className="user_navbar">
-            <li>
-                <a href="list.html">Login</a>
-            </li>
-            <li>
-                <a href="list.html">Signup</a>
-            </li>
-            <li>
-                <a href="index.html">Welcome (User)</a>
-            </li>
-            </ul>
-        </header>
-        <nav>
-            <ul className="navbar">
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="list.html">List</a>
-            </li>
-            <li>
-                <a href="detail.html">Details</a>
-            </li>
-            <li>
-                <a href="createNew.html">Create New</a>
-            </li>
-            </ul>
-        </nav>
+        <Header />
+
+        {/* React Component for NavBar */}
+        <NavBar />
+
         <article>
             <section>
             <h1>Welcome to createNew.html!</h1>
