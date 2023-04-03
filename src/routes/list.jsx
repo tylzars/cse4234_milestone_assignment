@@ -1,5 +1,6 @@
 import NavBar from './components/navbar'
 import Header from './components/header'
+import Footer from './components/footer'
 
 
 function list() {
@@ -54,7 +55,8 @@ function list() {
                 This page should be tried in Safari, Google Chrome or Mozilla Firefox.
                 </p>
             </div>
-            <footer>Copyright Turtle Team 2023</footer>
+            {/* React Component for Footer */}
+            <Footer />
         </>
     )
 }
