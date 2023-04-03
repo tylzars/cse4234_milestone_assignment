@@ -25,13 +25,10 @@ function header() {
                 <li>
                     <a href="/login">Login/SignUp</a>
                 </li>
+                {/* Hide User unless logged in (lol p makes this format awfully */}
+                {user?.displayName && <li><a href="/login">{user?.displayName}</a></li>} 
                 <li>
-                    <p>{user?.displayName}</p>
-                </li>
-                <li>
-                    <button onClick={handleSignOut} className='border py-2 px-5 mt-10'>
-                        Logout
-                    </button>
+                    <button onClick={handleSignOut}>Logout</button>
                 </li>
             </ul>
         </header>
