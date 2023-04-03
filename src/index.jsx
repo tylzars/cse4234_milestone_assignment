@@ -9,6 +9,8 @@ import "./styles/index.css";
 // page imports
 import Root from "./routes/root";
 import CreateNew from "./routes/createNew";
+import Detail from "./routes/detail";
+import List from "./routes/list";
 import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([
@@ -20,6 +22,16 @@ const router = createBrowserRouter([
   {
     path: "createNew",
     element: <CreateNew />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "detail",
+    element: <Detail />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "list",
+    element: <List />,
     errorElement: <ErrorPage />,
   },
 ]);

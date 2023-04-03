@@ -31,13 +31,13 @@ export default function Root() {
         <nav>
             <ul className="navbar">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="list.html">List</a>
+                    <a href="/list">List</a>
                 </li>
                 <li>
-                    <a href="detail.html">Details</a>
+                    <a href="/detail">Details</a>
                 </li>
                 <li>
                     <a href="/createNew">Create New</a>
