@@ -10,50 +10,38 @@ export default function Root() {
         <header role="banner">
             <div>
             <h1>
-                <img
-                src="./turtle.png"
-                alt="turle"
-                width={50}
-                height={50}
-                style={{ verticalAlign: "middle" }}
-                />{" "}
-                Welcome to Turtle Teams' Todos' List!{" "}
-                <img
-                src="./turtle.png"
-                alt="turle"
-                width={50}
-                height={50}
-                style={{ verticalAlign: "middle" }}
-                />
+                <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }}/>
+                {" "}Welcome to Turtle Teams' Todos' List!{" "}
+                <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }}/>
             </h1>
             <p>This page should be tried in safari, chrome or Mozila.</p>
             </div>
             <ul className="user_navbar">
-            <li>
-                <a href="list.html">Login</a>
-            </li>
-            <li>
-                <a href="list.html">Signup</a>
-            </li>
-            <li>
-                <a href="Welcome(User)">Welcome (User)</a>
-            </li>
+                <li>
+                    <a href="list.html">Login</a>
+                </li>
+                <li>
+                    <a href="list.html">Signup</a>
+                </li>
+                <li>
+                    <a href="Welcome(User)">Welcome (User)</a>
+                </li>
             </ul>
         </header>
         <nav>
             <ul className="navbar">
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="list.html">List</a>
-            </li>
-            <li>
-                <a href="detail.html">Details</a>
-            </li>
-            <li>
-                <a href="createNew.html">Create New</a>
-            </li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="list.html">List</a>
+                </li>
+                <li>
+                    <a href="detail.html">Details</a>
+                </li>
+                <li>
+                    <a href="/createNew">Create New</a>
+                </li>
             </ul>
         </nav>
         <article>
