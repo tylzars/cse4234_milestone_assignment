@@ -1,4 +1,16 @@
+import { UserAuth } from '../../context/AuthContext';
+
 function header() {
+    const { logOut, user } = UserAuth();
+
+    const handleSignOut = async () => {
+        try {
+          await logOut();
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
     return (
         <header role="banner">
             <div>
@@ -14,7 +26,12 @@ function header() {
                     <a href="/login">Login/SignUp</a>
                 </li>
                 <li>
-                    <a href="Welcome(User)">Welcome (User)</a>
+                    <p>{user?.displayName}</p>
+                </li>
+                <li>
+                    <button onClick={handleSignOut} className='border py-2 px-5 mt-10'>
+                        Logout
+                    </button>
                 </li>
             </ul>
         </header>

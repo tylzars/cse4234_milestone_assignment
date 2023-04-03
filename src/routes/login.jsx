@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase_config";
+import { UserAuth } from '../context/AuthContext';
+import { GoogleButton } from 'react-google-button';
+
 
 import NavBar from './components/navbar'
 import Header from './components/header'
@@ -8,92 +8,29 @@ import Footer from './components/footer'
 
 
 function Login() {
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const { googleSignIn, user } = UserAuth();
 
-  const [user, setUser] = useState({});
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
-
-  const register = async () => {
+  const handleGoogleSignIn = async () => {
     try {
-      const user = await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      );
-      console.log(user);
+      await googleSignIn();
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
-  };
-
-  const login = async () => {
-    try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const logout = async () => {
-    await signOut(auth);
   };
 
   return (
     <>
         <Header />
         <NavBar />
-        <div className="Login">
-            <div>
-                <h3> Register User </h3>
-                <input
-                placeholder="Email..."
-                onChange={(event) => {
-                    setRegisterEmail(event.target.value);
-                }}
-                />
-                <input
-                placeholder="Password..."
-                onChange={(event) => {
-                    setRegisterPassword(event.target.value);
-                }}
-                />
-
-                <button onClick={register}> Create User</button>
+        <div>
+            <h1 className='text-center text-3xl font-bold py-8'>Sign in</h1>
+            <div className='max-w-[240px] m-auto py-4'>
+                <GoogleButton onClick={handleGoogleSignIn} />
             </div>
-
-            <div>
-                <h3> Login </h3>
-                <input
-                placeholder="Email..."
-                onChange={(event) => {
-                    setLoginEmail(event.target.value);
-                }}
-                />
-                <input
-                placeholder="Password..."
-                onChange={(event) => {
-                    setLoginPassword(event.target.value);
-                }}
-                />
-
-                <button onClick={login}> Login</button>
-            </div>
-
+        </div>
+        <div>
             <h4> User Logged In: </h4>
             {user?.email}
-
-            <button onClick={logout}> Sign Out </button>
         </div>
         <Footer />
     </>

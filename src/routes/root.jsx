@@ -2,10 +2,6 @@ import NavBar from './components/navbar'
 import Header from './components/header'
 import Footer from './components/footer'
 
-
-
-//import React, { useRef, useEffect, useState } from 'react';
-
 export default function Root() {
     return (
         <>
