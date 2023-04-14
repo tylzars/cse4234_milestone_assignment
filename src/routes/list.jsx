@@ -6,9 +6,19 @@ import { UserAuth } from '../context/AuthContext'
 
 
 function list() {
-    // const {_, user} = UserAuth();
-    // console.log(user);
-    // const key = user;
+    const {user} = UserAuth();
+    const key = user.displayName;
+    var tasks = [];
+    console.log(key);
+    
+    for (var prop in userLists) {
+        if (prop === key) {
+            tasks = userLists[prop.toString()];
+            break;
+        }
+    }
+
+    
 
     return (
         <>
@@ -23,20 +33,23 @@ function list() {
 
             <article>
                 <section>
-                    {/* <div>
+                    <div>
                         <h2>{key}'s To Do List</h2>
-                        <ul style={{listStyleType:"none"}}>
-                            {userLists[key].forEach(element => {
-                                <div>
-                                    <p>Task: {element.name} Topic: {element.topic}</p>
-                                    <p>Urgency: {element.priority} Due: {element.dueDate}</p>
-                                    <p>Notes: <br/>{element.description}</p>
-                                </div>
+                        <ul>
+                            {tasks.map(element => {
+                                return(
+                                <li>
+                                    <div>
+                                        <p>Task: {element.name} Topic: {element.topic}</p>
+                                        <p>Urgency: {element.priority} Due: {new Date(element.dueDate).toLocaleString()}</p>
+                                        <p>Notes: <br/>{element.description}</p>
+                                    </div>
+                                </li>
+                                )
                             })}
-                        </ul>
-                        
-                    </div> */}
-                <h2>To-do List</h2>
+                        </ul> 
+                    </div>
+                {/* <h2>To-do List</h2>
                 <h3>Urgent Tasks</h3>
                 <div className="list_element">
                     <p>Urgent Task 1</p>
@@ -66,7 +79,7 @@ function list() {
                     <button onClick="window.location.href='detail.html'">Update</button>
                     <button onClick="window.location.href='detail.html'">Delete</button>
                     <br />
-                </div>
+                </div> */}
                 </section>
             </article>
             <div className="bottom">
