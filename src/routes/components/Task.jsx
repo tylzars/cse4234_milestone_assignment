@@ -4,6 +4,7 @@ class Task extends Component {
    constructor(
       taskName, taskTopic, dueDate, taskUrgency, taskNotes
    ) {
+      super();
       this.name = taskName;
       this.topic = taskTopic;
       this.dueDate = dueDate;
@@ -12,15 +13,15 @@ class Task extends Component {
       this.status = false;
 
       // These properties need to be implemented for duplicate prevention in DB
-      this.taskID;
-      this.topicID;
+      // this.taskID;
+      // this.topicID;
    }
 
    render() {
       return (
          <div>
-            <p>Task: {this.taskName} Topic: {this.taskTopic}</p>
-            <p>Urgency: {this.taskUrgency} Due: {this.dueDate}</p>
+            <p>Task: {this.name} Topic: {this.topic}</p>
+            <p>Urgency: {this.priority} Due: {this.dueDate}</p>
             <p>Notes: <br/>{this.description}</p>
          </div>
       );

@@ -1,0 +1,80 @@
+{
+  "Cameron Miskell": [
+    {
+      "name": "Take out trash",
+      "topic": "Chores",
+      "dueDate": "2023-04-23T10:30:00.000Z",
+      "priority": "medium",
+      "description": "Take out trashbag to the dumpster.",
+      "status": "false"
+    },
+    {
+      "name": "Walk the dog",
+      "topic": "Chores",
+      "dueDate": "2023-04-18T16:15:00.000Z",
+      "priority": "high",
+      "description": "Take family dog out for a walk.",
+      "status": "false"
+    },
+    {
+      "name": "Wash dishes",
+      "topic": "Chores",
+      "dueDate": "2023-04-16T17:00:00.000Z",
+      "priority": "high",
+      "description": "Clean the dishes before dinner.",
+      "status": "false"
+    }
+  ],
+  "Tyler Zars": [
+    {
+      "name": "Buy groceries",
+      "topic": "Errands",
+      "dueDate": "2023-04-20T14:00:00.000Z",
+      "priority": "high",
+      "description": "Buy groceries for the week including milk, bread, eggs, and vegetables.",
+      "status": "false"
+    },
+    {
+      "name": "Pay bills",
+      "topic": "Finance",
+      "dueDate": "2023-04-25T23:59:59.000Z",
+      "priority": "medium",
+      "description": "Pay monthly bills including rent, electricity, and internet.",
+      "status": "false"
+    },
+    {
+      "name": "Finish project report",
+      "topic": "Work",
+      "dueDate": "2023-04-30T12:00:00.000Z",
+      "priority": "high",
+      "description": "Finish the project report and submit it to the manager.",
+      "status": "false"
+    }
+  ],
+  "Grant Butler": [
+    {
+      "name": "Practice guitar",
+      "topic": "Hobbies",
+      "dueDate": "2023-04-17T18:30:00.000Z",
+      "priority": "medium",
+      "description": "Practice guitar for 30 minutes to improve fingerpicking skills.",
+      "status": "false"
+    },
+    {
+      "name": "Plan vacation",
+      "topic": "Travel",
+      "dueDate": "2023-04-23T09:00:00.000Z",
+      "priority": "high",
+      "description": "Research and plan a vacation to Hawaii for the upcoming summer.",
+      "status": "false"
+    },
+    {
+      "name": "Clean the garage",
+      "topic": "Chores",
+      "dueDate": "2023-04-28T15:00:00.000Z",
+      "priority": "low",
+      "description": "Spend 2 hours cleaning and organizing the garage.",
+      "status": "false"
+    }
+  ]
+}
