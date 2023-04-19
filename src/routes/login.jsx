@@ -9,8 +9,10 @@ import Footer from './components/footer'
 
 function Login() {
   const { handleSignIn, handleSignUp, googleSignIn, user } = UserAuth();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [signInEmail, setSignInEmail] = useState('');
+  const [signInPassword, setSignInPassword] = useState('');
+  const [signUpEmail, setSignUpEmail] = useState('');
+  const [signUpPassword, setSignUpPassword] = useState('');
 
   const handleGoogleSignIn = async () => {
     try {
@@ -22,7 +24,7 @@ function Login() {
 
   const handleUserSignIn = async (e) => {
     try {
-      await handleSignIn(e, email, password);
+      await handleSignIn(e, signInEmail, signInPassword);
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +32,7 @@ function Login() {
 
   const handleUserSignUp = async (e) => {
     try {
-      await handleSignUp(e, email, password);
+      await handleSignUp(e, signUpEmail, signUpPassword);
     } catch (error) {
       console.log(error);
     }
@@ -46,15 +48,15 @@ function Login() {
         <form onSubmit={handleUserSignIn}>
           <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={signInEmail}
+            onChange={(e) => setSignInEmail(e.target.value)}
             placeholder="Email"
             required
           />
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={signInPassword}
+            onChange={(e) => setSignInPassword(e.target.value)}
             placeholder="Password"
             required
           />
@@ -64,15 +66,15 @@ function Login() {
         <form onSubmit={handleUserSignUp}>
           <input
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={signUpEmail}
+            onChange={(e) => setSignUpEmail(e.target.value)}
             placeholder="Email"
             required
           />
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={signUpPassword}
+            onChange={(e) => setSignUpPassword(e.target.value)}
             placeholder="Password"
             required
           />
