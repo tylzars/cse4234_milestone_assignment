@@ -8,7 +8,7 @@ import Footer from './components/footer'
 
 
 function Login() {
-  const { handleSignIn, handleSignUp, googleSignIn, user } = UserAuth();
+  const { handleSignIn, handleSignUp, googleSignIn, facebookSignIn, user } = UserAuth();
   const [signInEmail, setSignInEmail] = useState('');
   const [signInPassword, setSignInPassword] = useState('');
   const [signUpEmail, setSignUpEmail] = useState('');
@@ -17,6 +17,14 @@ function Login() {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleFacebookSignIn = async () => {
+    try {
+      await facebookSignIn();
     } catch (error) {
       console.log(error);
     }
@@ -83,14 +91,19 @@ function Login() {
         </form>
 
         <div>
-            <h1 className='text-center text-3xl font-bold py-8'>Sign in</h1>
+            <h2 className='text-center text-3xl font-bold py-8'>Sign In With Google</h2>
             <div className='max-w-[240px] m-auto py-4'>
                 <GoogleButton onClick={handleGoogleSignIn} />
             </div>
         </div>
         <div>
-            <h4> User Logged In: </h4>
-            {user?.email}
+            <h2 className='text-center text-3xl font-bold py-8'>Sign In With Facebook</h2>
+            <div className='max-w-[240px] m-auto py-4'>
+                <button onClick={handleFacebookSignIn}>Facebook Pop Up</button>
+            </div>
+        </div>
+        <div>
+            <h2> User Logged In: {user?.email == null ? "N/A" : user?.email}</h2>
         </div>
         <Footer />
     </>

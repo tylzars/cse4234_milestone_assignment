@@ -1,5 +1,5 @@
 import { useContext, createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, signOut, onAuthStateChanged, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { GoogleAuthProvider, signOut, onAuthStateChanged, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, FacebookAuthProvider } from 'firebase/auth';
 //import { GoogleAuthProvider, signInWithRedirect, signOut, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase_config';
 
@@ -10,6 +10,12 @@ export const AuthContextProvider = ({ children }) => {
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+    //signInWithRedirect(auth, provider)
+  };
+
+  const facebookSignIn = () => {
+    const provider = new FacebookAuthProvider();
     signInWithPopup(auth, provider);
     //signInWithRedirect(auth, provider)
   };
@@ -48,7 +54,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ googleSignIn, logOut, user, handleSignUp, handleSignIn }}>
+    <AuthContext.Provider value={{ googleSignIn, facebookSignIn, logOut, user, handleSignUp, handleSignIn }}>
       {children}
     </AuthContext.Provider>
   );
