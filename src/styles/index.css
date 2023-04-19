@@ -85,6 +85,14 @@ footer {
   border-width: 2px;
 }
 
+.user_navbar > li > button {
+  /* Navbar is parent and li is child */
+  background-color: rgb(115, 33, 191);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
 .user_navbar > li > a {
   color: white;
 }

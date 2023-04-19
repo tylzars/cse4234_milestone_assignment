@@ -44,7 +44,7 @@ function Login() {
         <Header />
         <NavBar />
 
-
+        <h2>Sign In With Username / Password</h2>
         <form onSubmit={handleUserSignIn}>
           <input
             type="email"
@@ -63,6 +63,7 @@ function Login() {
           <button type="submit">Sign In</button>
         </form>
 
+        <h2>Sign Up With Username / Password</h2>
         <form onSubmit={handleUserSignUp}>
           <input
             type="email"
