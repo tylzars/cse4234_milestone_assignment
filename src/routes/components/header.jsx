@@ -26,7 +26,7 @@ function header() {
                     <a href="/login">Login/SignUp</a>
                 </li>
                 {/* Hide User unless logged in (lol p makes this format awfully */}
-                {user?.displayName && <li><a href="/login">{user?.displayName}</a></li>} 
+                {user?.email && <li><a href="/login">{user?.email}</a></li>} 
                 <li>
                     <button onClick={handleSignOut}>Logout</button>
                 </li>
