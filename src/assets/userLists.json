@@ -1,5 +1,5 @@
 {
-  "Cameron Miskell": [
+  "cmiskell2020@my.fit.edu": [
     {
       "name": "Take out trash",
       "topic": "Chores",
@@ -25,7 +25,7 @@
       "status": "false"
     }
   ],
-  "Tyler Zars": [
+  "tzars2019@my.fit.edu": [
     {
       "name": "Buy groceries",
       "topic": "Errands",
@@ -48,6 +48,32 @@
       "dueDate": "2023-04-30T12:00:00.000Z",
       "priority": "high",
       "description": "Finish the project report and submit it to the manager.",
+      "status": "false"
+    }
+  ],
+  "test@zars.me": [
+    {
+      "name": "Play Cyberpunk 2077",
+      "topic": "Hobbies",
+      "dueDate": "2023-04-17T18:30:00.000Z",
+      "priority": "medium",
+      "description": "Enjoy some gaming!.",
+      "status": "false"
+    },
+    {
+      "name": "Go to Bermuda",
+      "topic": "Travel",
+      "dueDate": "2023-04-23T09:00:00.000Z",
+      "priority": "high",
+      "description": "See some cool fish, have to plan it first...",
+      "status": "false"
+    },
+    {
+      "name": "Clean Bedroom",
+      "topic": "Chores",
+      "dueDate": "2023-04-28T15:00:00.000Z",
+      "priority": "low",
+      "description": "Spend 2 hours cleaning and organizing the bedroom.",
       "status": "false"
     }
   ],

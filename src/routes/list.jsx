@@ -33,7 +33,7 @@ function list() {
             )
         }
 
-        key = user.displayName;
+        key = user.email;
 
         return(
             <div>
