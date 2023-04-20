@@ -12,7 +12,7 @@ export default function Root() {
             <Header />
 
             {/* React Component for NavBar */}
-            <NavBar />
+            {/* <NavBar /> */}
 
             <article>
                 <section>

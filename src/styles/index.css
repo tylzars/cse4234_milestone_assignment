@@ -11,6 +11,7 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 8px;
+  margin-bottom: 8px;
   background-color: #efd9ce;
 }
 
@@ -29,16 +30,16 @@ footer {
   text-align: center;
 }
 
+/*
 .navbar {
   display: flex;
-  position: relative; /* related to its own position without changing layout */
+  position: relative;
   justify-content: center;
   list-style-type: none;
   background-color: #957fef;
-}
+} 
 
 .navbar > li {
-  /* Navbar is parent and li is child */
   background-color: #b79ced;
   font-weight: bold;
   font-size: 180%;
@@ -65,16 +66,37 @@ footer {
 .navbar > li > a:visited {
   color: #7161ef;
 }
+*/
 
-.user_navbar {
+.navbar {
   display: flex;
   position: relative; /* related to its own position without changing layout */
   justify-content: right;
   list-style-type: none;
+  overflow: auto;
   background-color: blueviolet;
 }
 
-.user_navbar > li {
+.navbar > .left {
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  
+  justify-content: left;
+  list-style-type: none;
+  overflow: auto;
+}
+
+.navbar > .right {
+    display: flex;
+    position: relative;
+    /* padding-left: 50px; */
+    justify-content: inherit;
+    list-style-type: none;
+    overflow: auto;
+}
+
+.navbar > .left > li {
   /* Navbar is parent and li is child */
   background-color: rgb(115, 33, 191);
   font-weight: bold;
@@ -83,17 +105,44 @@ footer {
   margin: 10px;
   border-radius: 8px;
   border-width: 2px;
+  width: auto;
 }
 
-.user_navbar > li > button {
+.navbar > .right > li {
+  /* Navbar is parent and li is child */
+  background-color: rgb(115, 33, 191);
+  font-weight: bold;
+  font-size: 180%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border-width: 2px;
+  width: auto;
+}
+
+.navbar > .left > li > button {
   /* Navbar is parent and li is child */
   background-color: rgb(115, 33, 191);
   color: white;
   font-weight: bold;
+  font-size: 100%;
   border: none;
 }
 
-.user_navbar > li > a {
+.navbar > .right > li > button {
+  /* Navbar is parent and li is child */
+  background-color: rgb(115, 33, 191);
+  color: white;
+  font-weight: bold;
+  font-size: 100%;
+  border: none;
+}
+
+.navbar > .left > li > a {
+  color: white;
+}
+
+.navbar > .right > li > a {
   color: white;
 }
 
@@ -128,8 +177,8 @@ label:first-letter {
 }
 
 .left-column {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .right-column {
@@ -138,14 +187,14 @@ label:first-letter {
 }
 
 .columns {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .bottom {
-    position: fixed;
-    bottom: 10px;
-    text-align-last: center;
-    width: 100%;
+  position: fixed;
+  bottom: 10px;
+  text-align-last: center;
+  width: 100%;
 }
