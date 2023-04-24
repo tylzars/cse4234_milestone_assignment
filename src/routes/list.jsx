@@ -1,4 +1,3 @@
-import NavBar from './components/navbar'
 import Header from './components/header'
 import Footer from './components/footer'
 import { DB } from '../assets/DB';
@@ -60,11 +59,9 @@ function list() {
             <meta charSet="utf-8" />
             <title>Turtle Teams' To-do's</title>
             <link rel="stylesheet" href="myStyles.css" type="text/css" />
-            {/* Store Start */}
+            {/* Store Start & Navbar */}
             <Header />
-            
-            {/* React Component for NavBar */}
-            <NavBar />
+
 
             <article>
                 <section>

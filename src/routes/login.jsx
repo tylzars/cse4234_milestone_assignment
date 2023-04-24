@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { UserAuth } from '../context/AuthContext';
 import { GoogleButton } from 'react-google-button';
 
-import NavBar from './components/navbar'
 import Header from './components/header'
 import Footer from './components/footer'
 
@@ -49,8 +48,8 @@ function Login() {
 
   return (
     <>
+        {/* Store Start & Navbar */}
         <Header />
-        <NavBar />
 
         <h2>Sign In With Username / Password</h2>
         <form onSubmit={handleUserSignIn}>

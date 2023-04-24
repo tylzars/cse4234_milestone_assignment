@@ -1,4 +1,3 @@
-import NavBar from './components/navbar'
 import Header from './components/header'
 import Footer from './components/footer'
 
@@ -8,11 +7,8 @@ export default function Root() {
             <meta charSet="utf-8" />
             <title>Turtle Teams' Todos'</title>
             <link rel="stylesheet" href="myStyles.css" type="text/css" />
-            {/* Store Start */}
+            {/* Store Start & Navbar */}
             <Header />
-
-            {/* React Component for NavBar */}
-            {/* <NavBar /> */}
 
             <article>
                 <section>
