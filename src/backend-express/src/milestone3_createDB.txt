@@ -1,0 +1,30 @@
+use cse4234-milestone-tasks
+
+db.tasks.insertMany(
+    [
+        {
+        "name": "Practice guitar",
+        "topic": "Hobbies",
+        "dueDate": "2023-04-17T18:30:00.000Z",
+        "priority": "medium",
+        "description": "Practice guitar for 30 minutes to improve fingerpicking skills.",
+        "status": "false"
+        },
+        {
+        "name": "Plan vacation",
+        "topic": "Travel",
+        "dueDate": "2023-04-23T09:00:00.000Z",
+        "priority": "high",
+        "description": "Research and plan a vacation to Hawaii for the upcoming summer.",
+        "status": "false"
+        },
+        {
+        "name": "Clean the garage",
+        "topic": "Chores",
+        "dueDate": "2023-04-28T15:00:00.000Z",
+        "priority": "low",
+        "description": "Spend 2 hours cleaning and organizing the garage.",
+        "status": "false"
+        }
+    ]
+)
