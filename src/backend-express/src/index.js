@@ -66,7 +66,7 @@ app.post('/api/tasks/', async (req, res) => {
     const mongo_cluster = client.db('cse4234-milestone-tasks');
 
     // Get all tasks for specific uid
-    const tasks = await mongo_cluster.collection('tasks').find({}).toArray();
+    const tasks = await mongo_cluster.collection('user_tasks').find({uid: uid}).toArray();
     
     // If we get tasks, send back; else error
     if (tasks){
