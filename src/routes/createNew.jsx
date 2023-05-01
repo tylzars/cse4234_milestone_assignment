@@ -16,7 +16,37 @@ const CreateNew = () => {
   
     const createNewTask = async () =>{
       // Send Data to our express route
-      console.log(user.uid, taskName, taskCategory, taskDueDate, taskUrgency, taskOtherNotes)
+      const user_new_data = {
+        uid: user.uid,
+        taskName: taskName,
+        taskCategory: taskCategory,
+        taskDueDate: taskDueDate,
+        taskUrgency: taskUrgency,
+        taskOtherNotes: taskOtherNotes
+      };
+      console.log(user_new_data)
+      
+      fetch('http://localhost:4000/api/createnew', { 
+        method: 'POST', 
+        mode: 'cors', 
+        body: JSON.stringify(user_new_data),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+      
 
       // Reset all fields since old task is created
       setTaskName("");

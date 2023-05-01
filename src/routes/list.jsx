@@ -2,13 +2,35 @@ import Header from './components/header'
 import Footer from './components/footer'
 import { DB } from '../assets/DB';
 import { UserAuth } from '../context/AuthContext';
+import { useEffect, useState } from 'react';
 
-function list() {
+const List = () => {
     const {user} = UserAuth();
 
+    const [userTasks, setUserTasks] = useState([]); 
+  
+    useEffect(() =>{
+      const loadData = async () =>{
+        // Load tasks from api via our users uid
+        const response = fetch('http://localhost:4000/api/tasks', { 
+            method: 'POST', 
+            mode: 'no-cors', 
+            body: JSON.stringify(user.uid)
+        });
+        
+        // Get back the data
+        const temp_tasks = response.data;
+        setUserTasks(temp_tasks);
+  
+      }
+      loadData();
+    });
+
+    console.log(userTasks)
+
     function displayList() {
-        let key;
         let tasks = DB();
+        let key;
         if (user === null) {
             key = "default";
 
@@ -79,4 +101,4 @@ function list() {
     )
 }
 
-export default list;
+export default List;
