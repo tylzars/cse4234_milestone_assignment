@@ -2,9 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import Header from './components/header'
 import Footer from './components/footer'
+import { UserAuth } from '../context/AuthContext'
 
 
 const CreateNew = () => {
+    const { user } = UserAuth()
     const [taskName, setTaskName] = useState("");
     const [taskCategory, setTaskCategory] = useState("");
     const [taskDueDate, setTaskDueDate] = useState("");
@@ -14,7 +16,7 @@ const CreateNew = () => {
   
     const createNewTask = async () =>{
       // Send Data to our express route
-      console.log(taskName, taskCategory, taskDueDate, taskUrgency, taskOtherNotes)
+      console.log(user.uid, taskName, taskCategory, taskDueDate, taskUrgency, taskOtherNotes)
 
       // Reset all fields since old task is created
       setTaskName("");
