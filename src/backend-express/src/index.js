@@ -9,7 +9,8 @@ const cors = require('cors')
 const app = express();
 app.use(express.json());
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000'];
+// CORS options to allow different origins and fix errors
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000', 'https://cse4234-milestone-node.onrender.com', 'https://deploy-preview-4--cse4234-turtle-todo.netlify.app/createNew', 'https://cse4234-turtle-todo.netlify.app/'];
 const corsOptions = {
     origin: allowedOrigins,
     optionsSuccessStatus: 200
@@ -50,6 +51,7 @@ app.post('/api/createnew/', async (req, res) => {
         console.log(response)
     }
 
+    // Do something cause yikes
     res.send("GOT SOEMTHING BACK")
 });
 
