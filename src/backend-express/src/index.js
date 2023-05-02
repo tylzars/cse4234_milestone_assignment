@@ -51,7 +51,7 @@ app.post('/api/createnew/', async (req, res) => {
     }
 
     // Do something cause yikes
-    res.send("GOT SOEMTHING BACK")
+    //res.send("GOT SOEMTHING BACK")
 });
 
 // Get tasks endpoint
@@ -75,7 +75,22 @@ app.get('/api/tasks/:uid', async (req, res) => {
     } else {
       res.sendStatus(404);
     }
-  });
+});
+
+app.put('/api/:taskId/delete', async (req, res) => {
+    const {taskId} = req.params;
+
+    // Setup mongo connection
+    const client = new MongoClient(uri);
+    await client.connect()
+  
+    // Connect to specific db
+    const mongo_cluster = client.db('cse4234-milestone-tasks');
+
+    await mongo_cluster.collection('user_tasks').deleteOne({_id: taskId});
+
+    res.sendStatus(200)
+});
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
