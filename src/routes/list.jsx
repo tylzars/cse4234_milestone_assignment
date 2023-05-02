@@ -12,7 +12,7 @@ const List = () => {
         const loadData = async () => {
             // Load tasks from api via our users uid
             const custom_url = 'https://cse4234-milestone-node.onrender.com/api/tasks/' + user.uid
-            const response = await fetch(custom_url, { 
+            await fetch(custom_url, { 
                 method: 'GET', 
                 mode: 'cors', 
                 headers: {

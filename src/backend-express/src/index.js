@@ -2,7 +2,6 @@ const { MongoClient } = require("mongodb");
 const express = require("express");
 const cors = require('cors')
 
-
 // npm install express mongodb cors
 
 // Setup App
