@@ -53,28 +53,27 @@ app.post('/api/createnew/', async (req, res) => {
 
 // Get tasks endpoint
 // manual curl with: curl -d '{"uid":"jHXzqrZxL8h4D4eThXPOgZjVNmw1"}' -H "Content-Type: application/json" -X POST localhost:4000/api/tasks
-app.post('/api/tasks/', async (req, res) => {
-    const { uid } = req.body
-    console.log(uid)
-    
+app.get('/api/tasks/:uid', async (req, res) => {
+    const uid = req.params.uid;
+  
     // Setup mongo connection
     const client = new MongoClient(uri);
     await client.connect()
-    //console.log(client)
-
+  
     // Connect to specific db
     const mongo_cluster = client.db('cse4234-milestone-tasks');
-
+  
     // Get all tasks for specific uid
     const tasks = await mongo_cluster.collection('user_tasks').find({uid: uid}).toArray();
-    
+  
     // If we get tasks, send back; else error
-    if (tasks){
-        res.json(tasks);
-    }else{
-        res.sendStatus(404);
+    if (tasks) {
+      res.json(tasks);
+    } else {
+      res.sendStatus(404);
     }
-});
+  });
+  
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");

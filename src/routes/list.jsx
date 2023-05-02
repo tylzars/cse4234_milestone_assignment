@@ -1,72 +1,67 @@
 import Header from './components/header'
 import Footer from './components/footer'
-import { DB } from '../assets/DB';
 import { UserAuth } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 
 const List = () => {
-    const {user} = UserAuth();
+    const { user } = UserAuth();
 
-    const [userTasks, setUserTasks] = useState([]); 
+    const [userTasks, setUserTasks] = useState(null); 
   
-    useEffect(() =>{
-      const loadData = async () =>{
-        // Load tasks from api via our users uid
-        const response = fetch('http://localhost:4000/api/tasks', { 
-            method: 'POST', 
-            mode: 'no-cors', 
-            body: JSON.stringify(user.uid)
-        });
-        
-        // Get back the data
-        const temp_tasks = response.data;
-        setUserTasks(temp_tasks);
-  
-      }
-      loadData();
-    });
+    useEffect(() => {
+        const loadData = async () => {
+            // Load tasks from api via our users uid
+            const custom_url = 'http://localhost:4000/api/tasks/' + user.uid
+            const response = await fetch(custom_url, { 
+                method: 'GET', 
+                mode: 'cors', 
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+                // Get back the data
 
-    console.log(userTasks)
+                if(data.length > 0){ 
+                    const temp_tasks = data;
+                    setUserTasks(temp_tasks);
+                } else {
+                    console.log("didn't update")
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        loadData();
+    }, [user.uid]);
 
     function displayList() {
-        let tasks = DB();
-        let key;
-        if (user === null) {
-            key = "default";
-
-            return(
-                <div>
-                    <h2>Example To Do List</h2>
-                    <ul>
-                        {tasks.map(element => {
-                            return(
-                                <li key={element.taskID}>
-                                    <div>
-                                        <p>Task: {element.name} Topic: {element.topic}</p>
-                                        <p>Urgency: {element.priority} Due: {new Date(element.dueDate).toLocaleString()}</p>
-                                        <p>Notes: <br/>{element.description}</p>
-                                    </div>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </div>
-            )
+        //const data = JSON.parse(userTasks)
+        for(var item in userTasks) {
+            console.log(userTasks[item])
         }
-
-        key = user.email;
 
         return(
             <div>
-                <h2>{key}'s To Do List</h2>
+                <h2>Example To Do List</h2>
                 <ul>
-                    {tasks.map(element => {
+                    {userTasks.map(element => {
                         return(
-                            <li key={tasks.indexOf(element)}>
+                            <li key={element.taskID}>
                                 <div>
-                                    <p>Task: {element.name} Topic: {element.topic}</p>
-                                    <p>Urgency: {element.priority} Due: {new Date(element.dueDate).toLocaleString()}</p>
-                                    <p>Notes: <br/>{element.description}</p>
+                                    <h4>Task: {element.taskName} </h4>
+                                    <p>Topic: {element.taskCategory}</p>
+                                    <p>Urgency: {element.taskUrgency}</p>
+                                    <p>Due: {new Date(element.taskDueDate).toLocaleDateString()}</p>
+                                    <p>Notes: {element.taskOtherNotes}</p>
                                 </div>
                             </li>
                         )
@@ -87,7 +82,7 @@ const List = () => {
 
             <article>
                 <section>
-                    {displayList()}
+                    {userTasks && displayList()}
                 </section>
             </article>
             <div className="bottom">
