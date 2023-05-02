@@ -86,6 +86,7 @@ const List = () => {
                                     <p>Urgency: {element.taskUrgency}</p>
                                     <p>Due: {new Date(element.taskDueDate).toLocaleDateString()}</p>
                                     <button className="action_button" onClick={() => deleteTask(element._id)}>Delete</button>
+                                    <a href={`/detail/${element._id}`}><button>Detail</button></a>
                                 </div>
                             </li>
                         )

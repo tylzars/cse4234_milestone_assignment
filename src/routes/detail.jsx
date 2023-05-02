@@ -1,13 +1,15 @@
 import Header from './components/header'
 import Footer from './components/footer'
+import { UserAuth } from '../context/AuthContext';
+import { useEffect, useState } from 'react';
 
+const Detail = () => {
+    const { user } = UserAuth();
 
-function detail() {
+    console.log()
+
     return (
         <>
-            <meta charSet="utf-8" />
-            <title>Turtle Teams' To-do's</title>
-            <link rel="stylesheet" href="myStyles.css" type="text/css" />
             {/* Store Start & Navbar */}
             <Header />
 
@@ -38,4 +40,4 @@ function detail() {
     )
 }
 
-export default detail;
+export default Detail;
