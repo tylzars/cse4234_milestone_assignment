@@ -66,10 +66,10 @@ const Detail = () => {
                         )
                     })}
                 </ul>
-                <button onClick={() => window.location.href='list.html'}>
+                <button onClick={() => window.location.href='/list'}>
                     Add updated task to list!
                 </button>
-                <button onClick={() => window.location.href='list.html'}>
+                <button onClick={() => window.location.href='/list'}>
                     Return to list.html
                 </button>
             </div>

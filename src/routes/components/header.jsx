@@ -15,9 +15,9 @@ function header() {
     <header role="banner">
       <div>
         <h1>
-          <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }} />
+          <img src="/turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }} />
           {" "}Welcome to Turtle Teams' Todos' List!{" "}
-          <img src="./turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }} />
+          <img src="/turtle.png" alt="turle" width={50} height={50} style={{ verticalAlign: "middle" }} />
         </h1>
         <p>This page should be tried in Safari, Google Chrome or Mozilla Firefox.</p>
       </div>
