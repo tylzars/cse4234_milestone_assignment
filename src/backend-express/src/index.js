@@ -1,6 +1,8 @@
 const { MongoClient } = require("mongodb");
 const express = require("express");
 const cors = require('cors')
+const serverless = require('serverless-http');
+
 
 // npm install express mongodb cors
 
@@ -14,18 +16,21 @@ const corsOptions = {
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
+
+const router = express.Router();
+
   
 
 // MongoDB Connection
 const uri = "mongodb+srv://tzars2019:iHdsXCBX62dNSUOg@cse4234-milestone-clust.ysexvq6.mongodb.net/?retryWrites=true&w=majority";
 
 // Build an endpoint
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.send([{ title: "API Output" }]);
 });
 
 // Add CreateNew Endpoint
-app.post('/api/createnew/', async (req, res) => {
+router.post('/api/createnew/', async (req, res) => {
     // Get data from request
     const { uid, taskName, taskCategory, taskDueDate, taskUrgency, taskOtherNotes } = req.body;
     console.log(uid, taskName)
@@ -53,7 +58,7 @@ app.post('/api/createnew/', async (req, res) => {
 
 // Get tasks endpoint
 // manual curl with: curl -d '{"uid":"jHXzqrZxL8h4D4eThXPOgZjVNmw1"}' -H "Content-Type: application/json" -X POST localhost:4000/api/tasks
-app.get('/api/tasks/:uid', async (req, res) => {
+router.get('/api/tasks/:uid', async (req, res) => {
     const uid = req.params.uid;
   
     // Setup mongo connection
@@ -74,9 +79,13 @@ app.get('/api/tasks/:uid', async (req, res) => {
     }
   });
   
+app.use('/.netlify/functions/server', router);
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
 });
+
+module.exports = app;
+module.exports.handler = serverless(app);
 
 //console.log("fun")

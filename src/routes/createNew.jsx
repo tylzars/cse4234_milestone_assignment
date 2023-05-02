@@ -26,7 +26,7 @@ const CreateNew = () => {
       };
       console.log(user_new_data)
       
-      fetch('/.netlify/functions/api/createnew/', { 
+      fetch('/.netlify/functions/server/api/createnew/', { 
         method: 'POST', 
         mode: 'cors', 
         body: JSON.stringify(user_new_data),

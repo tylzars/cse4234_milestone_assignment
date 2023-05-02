@@ -11,7 +11,7 @@ const List = () => {
     useEffect(() => {
         const loadData = async () => {
             // Load tasks from api via our users uid
-            const custom_url = '/.netlify/functions/api/tasks/' + user.uid
+            const custom_url = '/.netlify/functions/server/api/tasks/' + user.uid
             const response = await fetch(custom_url, { 
                 method: 'GET', 
                 mode: 'cors', 
