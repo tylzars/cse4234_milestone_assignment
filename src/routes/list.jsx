@@ -43,6 +43,41 @@ const List = () => {
         loadData();
     }, [user.uid]);
 
+    const deleteTask = async (taskId) => {
+        const custom_url = `https://cse4234-milestone-node.onrender.com/api/${taskId}/delete`
+        const response = await fetch(custom_url, { 
+            method: 'PUT', 
+            mode: 'cors', 
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Success:', data);
+            // Get back the data
+
+            if(data.length > 0){ 
+                const temp_tasks = data;
+                setUserTasks(temp_tasks);
+            } else {
+                console.log("didn't update")
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        const updatedTaskData = response.data;
+        setUserTasks(updatedTaskData);
+
+    }
+
     function displayList() {
         //const data = JSON.parse(userTasks)
         for(var item in userTasks) {
@@ -61,7 +96,7 @@ const List = () => {
                                     <p>Topic: {element.taskCategory}</p>
                                     <p>Urgency: {element.taskUrgency}</p>
                                     <p>Due: {new Date(element.taskDueDate).toLocaleDateString()}</p>
-                                    <p>Notes: {element.taskOtherNotes}</p>
+                                    <button className="action_button" onClick={() => deleteTask(item._id)}>Delete</button>
                                 </div>
                             </li>
                         )

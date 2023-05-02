@@ -47,11 +47,10 @@ app.post('/api/createnew/', async (req, res) => {
 
     // Log response
     if(response) {
-        console.log(response)
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(404)
     }
-
-    // Do something cause yikes
-    //res.send("GOT SOEMTHING BACK")
 });
 
 // Get tasks endpoint
@@ -95,5 +94,3 @@ app.put('/api/:taskId/delete', async (req, res) => {
 app.listen(4000, () => {
   console.log("Listening on port 4000");
 });
-
-//console.log("fun")
