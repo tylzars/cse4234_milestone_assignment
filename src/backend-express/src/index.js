@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 // CORS options to allow different origins and fix errors
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000', 'https://cse4234-milestone-node.onrender.com', 'https://deploy-preview-4--cse4234-turtle-todo.netlify.app/createNew', 'https://cse4234-turtle-todo.netlify.app/'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000', 'https://cse4234-milestone-node.onrender.com', 'https://deploy-preview-4--cse4234-turtle-todo.netlify.app', 'https://cse4234-turtle-todo.netlify.app'];
 const corsOptions = {
     origin: allowedOrigins,
     optionsSuccessStatus: 200
