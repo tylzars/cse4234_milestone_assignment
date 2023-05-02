@@ -7,7 +7,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^9.19.1",
+    "http-proxy-middleware": "^2.0.6",
     "mongodb": "^5.3.0",
+    "netlify-lambda": "^2.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-button": "^0.7.2",
@@ -21,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:lambda": "netlify-lambda serve src/backend-express",
+    "build:lambda": "netlify-lambda build src/backend-express"
   },
   "eslintConfig": {
     "extends": [
