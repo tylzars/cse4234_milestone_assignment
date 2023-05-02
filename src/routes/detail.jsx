@@ -46,8 +46,36 @@ const Detail = () => {
         loadData();
     }, [user.uid]);
 
-    console.log(userDetailTask)
-    
+    function displayDetailTask() {
+        return(
+            <div>
+                <h2>Welcome to detail.html!</h2>
+                <h3>Example To Do List</h3>
+                <ul>
+                    {userDetailTask.map(element => {
+                        return(
+                            <li key={element.taskID}>
+                                <div>
+                                    <h4>Task: {element.taskName} </h4>
+                                    <p>Topic: {element.taskCategory}</p>
+                                    <p>Urgency: {element.taskUrgency}</p>
+                                    <p>Due: {new Date(element.taskDueDate).toLocaleDateString()}</p>
+                                    <p>Other Notes: {element.taskOtherNotes}</p>
+                                </div>
+                            </li>
+                        )
+                    })}
+                </ul>
+                <button onClick={() => window.location.href='list.html'}>
+                    Add updated task to list!
+                </button>
+                <button onClick={() => window.location.href='list.html'}>
+                    Return to list.html
+                </button>
+            </div>
+        )
+    }
+
     return (
         <>
             {/* Store Start & Navbar */}
@@ -55,25 +83,10 @@ const Detail = () => {
 
             <article>
                 <section>
-                <h1>Welcome to detail.html!</h1>
-                <h3>Currently Selected Task Name!</h3>
-                <p>Urgency: Urgent</p>
-                <p>Due Date: Soon</p>
-                <p>Category: Fun</p>
-                <p>Other Notes: Lorem ipsum dolore!</p>
-                <button onClick={() => window.location.href='list.html'}>
-                    Add updated task to list!
-                </button>
-                <button onClick={() => window.location.href='list.html'}>
-                    Return to list.html
-                </button>
+                    {userDetailTask && displayDetailTask()}
                 </section>
             </article>
-            <div className="bottom">
-                <p>
-                This page should be tried in Safari, Google Chrome or Mozilla Firefox.
-                </p>
-            </div>
+
             {/* React Component for Footer */}
             <Footer />
         </>

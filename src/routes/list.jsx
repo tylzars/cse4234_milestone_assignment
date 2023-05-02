@@ -110,11 +110,7 @@ const List = () => {
                     {userTasks && displayList()}
                 </section>
             </article>
-            <div className="bottom">
-                <p>
-                This page should be tried in Safari, Google Chrome or Mozilla Firefox.
-                </p>
-            </div>
+
             {/* React Component for Footer */}
             <Footer />
         </>

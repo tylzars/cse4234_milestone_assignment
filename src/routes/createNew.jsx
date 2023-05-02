@@ -103,11 +103,7 @@ const CreateNew = () => {
                     <input type="submit" defaultValue="Submit" onClick={createNewTask}/>
                 </form>
             </article>
-            <div className="bottom">
-                <p>
-                This page should be tried in Safari, Google Chrome or Mozilla Firefox.
-                </p>
-            </div>
+
             {/* React Component for Footer */}
             <Footer />
         </>

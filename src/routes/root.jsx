@@ -7,6 +7,7 @@ export default function Root() {
             <meta charSet="utf-8" />
             <title>Turtle Teams' Todos'</title>
             <link rel="stylesheet" href="myStyles.css" type="text/css" />
+            
             {/* Store Start & Navbar */}
             <Header />
 
@@ -27,6 +28,7 @@ export default function Root() {
                 <img alt="Turtle To Do" src="./turtle_to_do.png" width={200} height={200} style={{ display: "block", margin: "auto" }}></img>
                 </section>
             </article>
+
             {/* React Component for Footer */}
             <Footer />
         </>
