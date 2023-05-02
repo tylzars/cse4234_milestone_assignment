@@ -34,6 +34,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "detail/:id",
+    element: <Detail />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "list",
     element: <List />,
     errorElement: <ErrorPage />,

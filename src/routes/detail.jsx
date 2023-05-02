@@ -6,7 +6,47 @@ import { useEffect, useState } from 'react';
 const Detail = () => {
     const { user } = UserAuth();
 
-    console.log()
+    const [userDetailTask, setUserDetailTask] = useState(null); 
+
+
+    useEffect(() => {
+        const loadData = async () => {
+            // Load task from api via our passed _id
+            const current_url = window.location.href
+            const custom_url = 'https://cse4234-milestone-node.onrender.com/api/task/' + current_url.split('/').pop()
+
+            await fetch(custom_url, { 
+                method: 'GET', 
+                mode: 'cors', 
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+                // Get back the data
+
+                if(data.length > 0){ 
+                    const temp_tasks = data;
+                    setUserDetailTask(temp_tasks);
+                } else {
+                    console.log("didn't update")
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        loadData();
+    }, [user.uid]);
+
+    console.log(window.location.href)
 
     return (
         <>
@@ -21,10 +61,10 @@ const Detail = () => {
                 <p>Due Date: Soon</p>
                 <p>Category: Fun</p>
                 <p>Other Notes: Lorem ipsum dolore!</p>
-                <button onclick="window.location.href='list.html'">
+                <button onClick={() => window.location.href='list.html'}>
                     Add updated task to list!
                 </button>
-                <button onclick="window.location.href='list.html'">
+                <button onClick={() => window.location.href='list.html'}>
                     Return to list.html
                 </button>
                 </section>

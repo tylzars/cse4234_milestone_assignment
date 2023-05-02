@@ -93,6 +93,30 @@ app.put('/api/:taskId/delete', async (req, res) => {
     res.sendStatus(200)
 });
 
+// Get a specific task
+app.get('/api/task/:taskId', async (req, res) => {
+  const taskId = req.params;
+  const ObjectId = require("mongodb").ObjectId;
+
+
+  // Setup mongo connection
+  const client = new MongoClient(uri);
+  await client.connect()
+
+  // Connect to specific db
+  const mongo_cluster = client.db('cse4234-milestone-tasks');
+
+  // Get all tasks for specific uid
+  const task = await mongo_cluster.collection('user_tasks').find({_id: new ObjectId(taskId.toString())}).toArray();
+
+  // If we get tasks, send back; else error
+  if (task) {
+    res.json(task);
+  } else {
+    res.sendStatus(404);
+  }
+});
+
 app.listen(4000, () => {
   console.log("Listening on port 4000");
 });
