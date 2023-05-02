@@ -26,7 +26,7 @@ const CreateNew = () => {
       };
       console.log(user_new_data)
       
-      fetch('http://localhost:4000/api/createnew', { 
+      fetch('https://cse4234-milestone-node.onrender.com/api/createnew', { 
         method: 'POST', 
         mode: 'cors', 
         body: JSON.stringify(user_new_data),

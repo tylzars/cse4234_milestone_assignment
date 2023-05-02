@@ -8,12 +8,14 @@ const cors = require('cors')
 const app = express();
 app.use(express.json());
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000'];
+// CORS options to allow different origins and fix errors
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000', 'https://cse4234-milestone-node.onrender.com', 'https://deploy-preview-4--cse4234-turtle-todo.netlify.app', 'https://cse4234-turtle-todo.netlify.app'];
 const corsOptions = {
     origin: allowedOrigins,
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
+
   
 
 // MongoDB Connection
@@ -45,10 +47,10 @@ app.post('/api/createnew/', async (req, res) => {
 
     // Log response
     if(response) {
-        console.log(response)
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(404)
     }
-
-    res.send("GOT SOEMTHING BACK")
 });
 
 // Get tasks endpoint
@@ -72,11 +74,25 @@ app.get('/api/tasks/:uid', async (req, res) => {
     } else {
       res.sendStatus(404);
     }
-  });
+});
+
+app.put('/api/:taskId/delete', async (req, res) => {
+    const {taskId} = req.params;
+    const ObjectId = require("mongodb").ObjectId;
+
+    // Setup mongo connection
+    const client = new MongoClient(uri);
+    await client.connect()
   
+    // Connect to specific db
+    const mongo_cluster = client.db('cse4234-milestone-tasks');
+
+    // Delete task
+    await mongo_cluster.collection('user_tasks').deleteOne({_id: new ObjectId(taskId.toString())});
+
+    res.sendStatus(200)
+});
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
 });
-
-//console.log("fun")

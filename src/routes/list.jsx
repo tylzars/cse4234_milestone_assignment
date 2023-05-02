@@ -11,8 +11,8 @@ const List = () => {
     useEffect(() => {
         const loadData = async () => {
             // Load tasks from api via our users uid
-            const custom_url = 'http://localhost:4000/api/tasks/' + user.uid
-            const response = await fetch(custom_url, { 
+            const custom_url = 'https://cse4234-milestone-node.onrender.com/api/tasks/' + user.uid
+            await fetch(custom_url, { 
                 method: 'GET', 
                 mode: 'cors', 
                 headers: {
@@ -43,6 +43,30 @@ const List = () => {
         loadData();
     }, [user.uid]);
 
+    const deleteTask = async (taskId) => {
+        console.log(taskId)
+        const custom_url = `https://cse4234-milestone-node.onrender.com/api/${taskId}/delete`
+        const response = await fetch(custom_url, { 
+            method: 'PUT', 
+            mode: 'cors', 
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
     function displayList() {
         //const data = JSON.parse(userTasks)
         for(var item in userTasks) {
@@ -61,7 +85,7 @@ const List = () => {
                                     <p>Topic: {element.taskCategory}</p>
                                     <p>Urgency: {element.taskUrgency}</p>
                                     <p>Due: {new Date(element.taskDueDate).toLocaleDateString()}</p>
-                                    <p>Notes: {element.taskOtherNotes}</p>
+                                    <button className="action_button" onClick={() => deleteTask(element._id)}>Delete</button>
                                 </div>
                             </li>
                         )
