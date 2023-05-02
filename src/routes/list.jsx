@@ -11,7 +11,7 @@ const List = () => {
     useEffect(() => {
         const loadData = async () => {
             // Load tasks from api via our users uid
-            const custom_url = 'https://cse4234-milestone-node.onrender.com/api/tasks/' + user.uid
+            const custom_url = 'https://cse4234-milestone-node.onrender.com/api/tasks/' + user?.uid
             await fetch(custom_url, { 
                 method: 'GET', 
                 mode: 'cors', 
@@ -41,12 +41,12 @@ const List = () => {
             });
         }
         loadData();
-    }, [user.uid]);
+    }, [user]);
 
     const deleteTask = async (taskId) => {
         console.log(taskId)
         const custom_url = `https://cse4234-milestone-node.onrender.com/api/${taskId}/delete`
-        const response = await fetch(custom_url, { 
+        await fetch(custom_url, { 
             method: 'PUT', 
             mode: 'cors', 
             headers: {
@@ -68,11 +68,6 @@ const List = () => {
     }
 
     function displayList() {
-        //const data = JSON.parse(userTasks)
-        for(var item in userTasks) {
-            console.log(userTasks[item])
-        }
-
         return(
             <div>
                 <h2>Example To Do List</h2>
@@ -96,6 +91,36 @@ const List = () => {
         )
     }
 
+    function displayExampleList() {
+        return(
+            <div>
+                <h2>Example To Do List</h2>
+                <ul>
+                    <li>
+                        <div>
+                            <h4>Task: Task #1 </h4>
+                            <p>Topic: Category #2</p>
+                            <p>Urgency: Low</p>
+                            <p>Due: 04/32/2032</p>
+                            <button className="action_button">Delete</button>
+                            <a href={"/detail"}><button>Detail</button></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>Task: Task #2 </h4>
+                            <p>Topic: Category #2</p>
+                            <p>Urgency: High</p>
+                            <p>Due: 03/23/2134</p>
+                            <button className="action_button">Delete</button>
+                            <a href={"/detail/"}><button>Detail</button></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        )
+    }
+
     return (
         <>
             <meta charSet="utf-8" />
@@ -108,6 +133,7 @@ const List = () => {
             <article>
                 <section>
                     {userTasks && displayList()}
+                    {!userTasks && displayExampleList()}
                 </section>
             </article>
 

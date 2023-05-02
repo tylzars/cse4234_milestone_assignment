@@ -50,7 +50,7 @@ const Detail = () => {
             }
         }
         loadData();
-    }, [user.uid]);
+    }, [user]);
 
     function displayDetailTask() {
         return(
