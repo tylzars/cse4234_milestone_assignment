@@ -77,7 +77,7 @@ app.get('/api/tasks/:uid', async (req, res) => {
 });
 
 app.put('/api/:taskId/delete', async (req, res) => {
-    const {taskId} = req.params;
+    const { taskId } = req.params;
     const ObjectId = require("mongodb").ObjectId;
 
     // Setup mongo connection
@@ -95,7 +95,7 @@ app.put('/api/:taskId/delete', async (req, res) => {
 
 // Get a specific task
 app.get('/api/task/:taskId', async (req, res) => {
-  const taskId = req.params;
+  const { taskId } = req.params;
   const ObjectId = require("mongodb").ObjectId;
 
 

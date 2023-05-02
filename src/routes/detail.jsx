@@ -46,8 +46,8 @@ const Detail = () => {
         loadData();
     }, [user.uid]);
 
-    console.log(window.location.href)
-
+    console.log(userDetailTask)
+    
     return (
         <>
             {/* Store Start & Navbar */}
