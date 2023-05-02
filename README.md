@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Turtle To-Do's
+
+This application is a todo list built from a MERN (MongoDB, Express, React, Node) stack. The backend NodeJS server is hosted on [render.com](render.com) utilizing Express to control the various API endpoints for communicating with our MongoDB database. The frontend ReactJS application is deployed automatically to Netlify using CI/CD on the main branch of this repository. 
+
+You can find the deployed application here: [https://cse4234-turtle-todo.netlify.app/](https://cse4234-turtle-todo.netlify.app/).
+
+Firebase is used for user authentication with the ability to make an account via email/password, sign in with Google, or sign in with Facebook.
+
+The testing account for the deployment is:
+- Email: test@zars.me
+- Password: test123
+
+The defualt boiler plate Create React App information is below...
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
