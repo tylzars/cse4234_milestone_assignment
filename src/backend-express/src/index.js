@@ -78,6 +78,7 @@ app.get('/api/tasks/:uid', async (req, res) => {
 
 app.put('/api/:taskId/delete', async (req, res) => {
     const {taskId} = req.params;
+    const ObjectId = require("mongodb").ObjectId;
 
     // Setup mongo connection
     const client = new MongoClient(uri);
@@ -87,7 +88,7 @@ app.put('/api/:taskId/delete', async (req, res) => {
     const mongo_cluster = client.db('cse4234-milestone-tasks');
 
     // Delete task
-    await mongo_cluster.collection('user_tasks').deleteOne({_id: new MongoClient.ObjectId(taskId.toString())});
+    await mongo_cluster.collection('user_tasks').deleteOne({_id: new ObjectId(taskId.toString())});
 
     res.sendStatus(200)
 });
