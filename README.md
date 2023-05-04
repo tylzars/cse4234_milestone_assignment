@@ -10,6 +10,11 @@ The testing account for the deployment is:
 - Email: test@zars.me
 - Password: test123
 
+For grading, the following files can be found in these directories:
+- Schema: [src/backend-express/src/milestone3_createDB.txt](src/backend-express/src/milestone3_createDB.txt)
+- Data Population: [src/backend-express/src/database.json](src/backend-express/src/database.json)
+- Database Integration: [detail.jsx](src/routes/detail.jsx), [createNew.jsx](src/routes/createNew.jsx), [list.jsx](src/routes/list.jsx)
+
 The defualt boiler plate Create React App information is below...
 
 ## Getting Started with Create React App
