@@ -28,3 +28,5 @@ db.user_tasks.insertMany(
         }
     ]
 )
+
+// Export database with: mongoexport --uri mongodb+srv://tzars2019:iHdsXCBX62dNSUOg@cse4234-milestone-clust.ysexvq6.mongodb.net/cse4234-milestone-tasks --collection user_tasks --type json --out database.json

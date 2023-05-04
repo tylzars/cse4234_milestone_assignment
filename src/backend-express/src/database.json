@@ -1,0 +1,19 @@
+
+{"_id":{"$oid":"6450352dd0bfdbea27609c8c"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"645038edc3fb77260a80c041"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"6450398d05af7e19d9375a99"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"645039e905af7e19d9375a9a"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"64503cd7b492ea677429dec0"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"64503d0db492ea677429dec1"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"64503e26b492ea677429dec3"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"64503e567fb580cc510c6a6c"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"64503ed4e834f1603fa261c7"},"uid":null,"taskName":null,"taskCategory":null,"taskDueDate":null,"taskUrgency":null,"taskOtherNotes":null}
+{"_id":{"$oid":"645043321c5fc0c17df0bd82"},"uid":"jHXzqrZxL8h4D4eThXPOgZjVNmw1","taskName":"salhfklj","taskCategory":"jkhzljkdhfalk","taskDueDate":"2023-05-04","taskUrgency":"asgda","taskOtherNotes":"sdfgasg"}
+{"_id":{"$oid":"6450437f1c5fc0c17df0bd83"},"uid":"jHXzqrZxL8h4D4eThXPOgZjVNmw1","taskName":"Task 1","taskCategory":"Fun","taskDueDate":"2023-05-05","taskUrgency":"High","taskOtherNotes":"askjhfdlkjasdhfkashflkasdfhlkjasdf"}
+{"_id":{"$oid":"64507175cb3d6caa4cb3e8ca"},"uid":"jHXzqrZxL8h4D4eThXPOgZjVNmw1","taskName":"Task #2","taskCategory":"Fun","taskDueDate":"2023-03-04","taskUrgency":"High","taskOtherNotes":"Do this soon???"}
+{"_id":{"$oid":"64508015aadcb214e07c9af3"},"uid":"jHXzqrZxL8h4D4eThXPOgZjVNmw1","taskName":"Plan vacation","taskCategory":"Travel","taskDueDate":"2023-04-23T09:00:00.000Z","taskUrgency":"high","taskOtherNotes":"Research and plan a vacation to Hawaii for the upcoming summer."}
+{"_id":{"$oid":"6450850f9e86cefc41ef1814"},"uid":"EmLQDBaKceRNy2VUXOx1lOgbG8j2","taskName":"Work on Project","taskCategory":"School","taskDueDate":"2023-05-12","taskUrgency":"Urgent","taskOtherNotes":"Make the jazz work\n"}
+{"_id":{"$oid":"645125b3dcceb260bed291f7"},"uid":"jHXzqrZxL8h4D4eThXPOgZjVNmw1","taskName":"ABCD","taskCategory":"Funn6 asdf","taskDueDate":"2023-05-04","taskUrgency":"asjkhdfkjl","taskOtherNotes":"fuashfliuo nhsajfih aiuofh ui; sfyhsalkjfnhsaduhofsdajfh oshdfgds,jf hsdfkasdl;kfhsdafnasdfhasdfl;jsafhjasfljsadlfhsad;lkfhj sakjhg lsainsaduhtffoei j 9oehsw flkassdhg;oasdh foaishf owqe;hf;.ahbfo; ash fofhlsf;jh alshf lskdfh oasifhbsdl;aifh sdialfh ;lsadjf alh loaisdf"}
+{"_id":{"$oid":"6452fb2150056e14dea6e879"},"uid":"9OzgJvxIr2hmL0WpqWU8hI9DtlH3","taskName":"Walk the Dog","taskCategory":"Pets","taskDueDate":"2023-05-05","taskUrgency":"High","taskOtherNotes":"Gotta take the dog on a walk, Friday at 6pm"}
+{"_id":{"$oid":"64531ae9c96efcce7536de5b"},"uid":"9OzgJvxIr2hmL0WpqWU8hI9DtlH3","taskName":"Write Lab Report","taskCategory":"Assignments","taskDueDate":"2023-05-12","taskUrgency":"Medium","taskOtherNotes":"Write up a report on the last chemistry lab. Due at midnight on May 12."}
+{"_id":{"$oid":"64531de7c96efcce7536de5d"},"uid":"pvcrGKXkPFht2m1pui5QTkFCi412","taskName":"CSE4324 Final","taskCategory":"School","taskDueDate":"2023-05-03","taskUrgency":"High","taskOtherNotes":"Finish up the documentation of the project."}
