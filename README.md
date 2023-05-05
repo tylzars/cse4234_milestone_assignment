@@ -15,6 +15,12 @@ For grading, the following files can be found in these directories:
 - Data Population: [src/backend-express/src/database.json](src/backend-express/src/database.json)
 - Database Integration: [detail.jsx](src/routes/detail.jsx), [createNew.jsx](src/routes/createNew.jsx), [list.jsx](src/routes/list.jsx)
 
+Demo Video can be found [here](https://drive.google.com/file/d/1qTCmVQ7NndLj-FlAXAbInG8VHTII7JQf/view?usp=sharing).
+
+Documentation can be found here: [docs/documentation.md](docs/documentation.md).
+
+User Guide can be found [here](https://docs.google.com/presentation/d/17beiR3-4RANBiguyb5TBPt0pQkEiIjNzG_KaGDvhmdc/edit?usp=sharing).
+
 The defualt boiler plate Create React App information is below...
 
 ## Getting Started with Create React App
