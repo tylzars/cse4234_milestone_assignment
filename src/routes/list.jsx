@@ -121,6 +121,20 @@ const List = () => {
         )
     }
 
+    {/* Not entirely sure how to get the list with the async still running */}
+    const [filteredList, setFilteredList] = useState([]);
+    
+    const filterBySearch = (event) => {
+      const query = event.target.value;
+      var updatedList = [...userTasks];
+      
+      updatedList = updatedList.filter((item) => {
+        return item.taskName.toLowerCase().indexOf(query.toLowerCase())!== -1;
+      });
+
+      setFilteredList(updatedList);
+    };
+
     return (
         <>
             <meta charSet="utf-8" />
@@ -129,7 +143,16 @@ const List = () => {
             {/* Store Start & Navbar */}
             <Header />
 
-
+            <div class="search-header">
+              <div class="search-text">Search:</div>
+              <input id="search-box"
+                onChange={filterBySearch} />
+                <ul>
+                  {filteredList.map((element) => (
+                    <li key={element.taskName}>{element}</li>
+                  ))}
+                </ul>
+            </div>
             <article>
                 <section>
                     {userTasks && displayList()}
